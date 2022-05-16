@@ -1,0 +1,37 @@
+{% extends "base.html" %} 
+
+{% block title %}Notes{% endblock %}
+
+
+{% block content %}
+
+<h1 align="center" class="main-header">Notes</h1>
+<ul class="list-group list-group-flush" id="notes">
+
+    {% for note in user.notes %}
+    
+    <li class="list-group-item notes">
+        {{ note.data }}
+        <span id="note-date">{{ note.date.strftime("%Y %b, %d") }}</span>
+
+        <!-- Delete -->
+        <button type="button" class="close btn btn-secondary btn-small btn-delete-notes" onclick="deleteNote({{ note.id }})">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </li>
+    
+    {% endfor %}
+
+</ul>
+
+<!-- Data to database (POST) -->
+<form method="POST" class="container">
+    <textarea name="note" id="note" class="form-control" placeholder="Write your notes here"></textarea>
+        {{ form.date(class='datepicker form-control') }}
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary submit" style="margin-top: 15px">Add Note</button>
+    </div>
+</form>
+
+{% endblock %}
