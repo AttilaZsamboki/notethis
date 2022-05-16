@@ -161,6 +161,10 @@
     text-align: center;
     font-weight: lighter;
     height: 40px;
+    position: relative;
+    left: 90%;
+    bottom: 62px;
+    width: 250px;
 } 
 
 #note {
@@ -169,14 +173,7 @@
     width: clamp(200px, 1100px, 1100px);   
 }
 
-#date {
-    position: relative;
-    left: 90%;
-    bottom: 62px;
-    width: 250px;
-}
 
-    
 /* Flash */
 
 .flash {
