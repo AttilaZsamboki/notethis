@@ -4,161 +4,91 @@
     <meta charset="UTF-8" />
     <title>{% block title %}Home{% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="static/media/download.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="static\styles\bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/static/styles/styles.css" />
-    <script
-      src="https://kit.fontawesome.com/54ffaac36c.js"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      rel="stylesheet"
+      href="static\styles\bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/static/styles/styles.css">
+    <script src="https://kit.fontawesome.com/54ffaac36c.js" crossorigin="anonymous"></script>
   </head>
   <body>
+
+    
     {% if user.is_authenticated %}
-
+    
     <!-- Navbar toggle -->
-
-    <nav class="navbar navbar-dark bg-dark" aria-label="navbar-toggle">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbar"
-        aria-controls="navbarToggleExternalContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </nav>
+    
+      <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>     
 
     <!-- navbar -->
 
-    <div class="collapse navbar-collapse" id="navbar">
-      <div class="navbar-nav nav flex-column">
-        {% if current_page == 'home' %}
-        <a
-          class="nav-item nav-link active fa-solid fa-house"
-          id="home"
-          href="/"
-        >
-          Home
-        </a>
-        <a
-          class="nav-item nav-link fa-solid fa-note-sticky"
-          id="notes"
-          href="/notes"
-        >
-          Notes
-        </a>
-        <a
-          class="nav-item nav-link fa-solid fa-arrow-right-from-bracket"
-          id="logout"
-          href="/logout"
-        >
-          Log Out
-        </a>
-        {% else %}
-        <a class="nav-item nav-link fa-solid fa-house" id="home" href="/">
-          Home
-        </a>
-        <a
-          class="nav-item nav-link active fa-solid fa-note-sticky"
-          id="notes"
-          href="/notes"
-        >
-          Notes
-        </a>
-        <a
-          class="nav-item nav-link fa-solid fa-arrow-right-from-bracket"
-          id="logout"
-          href="/logout"
-        >
-          Log Out
-        </a>
-        {% endif %}
-      </div>
-    </div>
-
-    {% else %}
-    <nav class="auth-nav navbar-expand-lg navbar-dark bg-dark" aria-label="main-nav">
-      <button
-        id="auth-nav-toggler"
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbar"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-dark bg-dark collapse navbar-collapse" id="navbar">
-        <div class="navbar-nav">
-          {% if current_page == 'login' %}
-          <a
-            class="nav-item nav-link active fa-solid fa-right-to-bracket"
-            id="login"
-            href="/"
-          >
-            Log In
-          </a>
-          <a
-            class="nav-item nav-link fa-solid fa-user-plus"
-            id="sign-up"
-            href="/sign-up"
-          >
-            Sign Up
-          </a>
-          {% else %}
-          <a
-            class="nav-item nav-link fa-solid fa-right-to-bracket"
-            id="login"
-            href="/"
-          >
-            Log In
-          </a>
-          <a
-            class="nav-item nav-link active fa-solid fa-user-plus"
-            id="sign-up"
-            href="/sign-up"
-          >
-            Sign Up
-          </a>
-          {% endif %}
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav nav flex-column">          
+            {% if current_page == 'home' %}
+              <a class="nav-item nav-link active fa-solid fa-house" id="home" href="/"> Home </a>
+              <a class="nav-item nav-link fa-solid fa-note-sticky" id="notes" href="/notes"> Notes </a>
+              <a class="nav-item nav-link fa-solid fa-arrow-right-from-bracket" id="logout" href="/logout"> Log Out </a>
+            {% else %}
+              <a class="nav-item nav-link fa-solid fa-house" id="home" href="/"> Home </a>
+              <a class="nav-item nav-link active fa-solid fa-note-sticky" id="notes" href="/notes"> Notes </a>
+              <a class="nav-item nav-link fa-solid fa-arrow-right-from-bracket" id="logout" href="/logout"> Log Out </a>
+            {% endif %}
         </div>
       </div>
-    </nav>
 
-    {% endif %} {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %} {% for category, message in messages %} {% if category ==
-    'error' %}
-    <div
-      class="alert alert-danger alter-dismissable fade show flash"
-      role="alert"
-    >
-      {{ message }}
-      <button
-        type="button"
-        class="close btn flash-close-btn"
-        data-dismiss="alert"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
     {% else %}
-    <div
-      class="alert alert-success alter-dismissable fade show flash"
-      role="alert"
-    >
-      {{ message }}
-      <button
-        type="button"
-        class="close btn flash-close-btn"
-        data-dismiss="alert"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    {% endif %} {% endfor %} {% endif %} {% endwith %}
+      <nav class="auth-nav navbar-expand-lg navbar-dark bg-dark">
+        <button
+          id="auth-nav-toggler"
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-dark bg-dark collapse navbar-collapse" id="navbar">
+          <div class="navbar-nav">
+            {% if current_page == 'login' %}
+              <a class="nav-item nav-link active fa-solid fa-right-to-bracket" id="login" href="/"> Log In </a>
+              <a class="nav-item nav-link fa-solid fa-user-plus" id="sign-up" href="/sign-up"> Sign Up </a>
+            {% else %}
+              <a class="nav-item nav-link fa-solid fa-right-to-bracket" id="login" href="/"> Log In </a>
+              <a class="nav-item nav-link active fa-solid fa-user-plus" id="sign-up" href="/sign-up"> Sign Up </a>
+          {% endif %}
+          </div>
+        </div>
+      </nav>
+    
+    {% endif %}
+      
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+    {% if messages %} 
+      {% for category, message in messages %}
+        {% if category == 'error' %}
+          <div class="alert alert-danger alter-dismissable fade show flash" role="alert">
+            {{ message }} 
+            <button type="button" class="close btn flash-close-btn" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% else %}
+          <div class="alert alert-success alter-dismissable fade show flash" role="alert">
+            {{ message }} 
+            <button type="button" class="close btn flash-close-btn" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
 
     <div class="container">{% block content %} {% endblock %}</div>
 
@@ -178,9 +108,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script
-      type="text/javascript"
-      src="{{ url_for('static', filename='index.js') }}"
-    ></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
   </body>
 </html>

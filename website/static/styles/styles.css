@@ -1,189 +1,185 @@
-
 /* GLOBAL */
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0;
-    margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
 }
-
 
 /* SIGN UP PAGE */
 
-
 .basic-auth-input {
-    margin-top: 30px;
-    position: fixed;
-    left: 30%;
-    right: 30%;
+  margin-top: 30px;
+  position: fixed;
+  left: 30%;
+  right: 30%;
 }
 
 .auth-input-title {
-    margin-bottom: 18px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: medium;
+  margin-bottom: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
 }
 
 .submit {
-    background-color: #5BB9BD;
-    border: 300px grey;
-    width: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    position: relative;
-    top: 300px;
+  background-color: #5bb9bd;
+  border: 300px grey;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  position: relative;
+  top: 300px;
 }
 
-    /* AUTH NAV */
+/* AUTH NAV */
 
 .auth-nav {
-    width: 16%;
-    padding-top: 2%;
-    padding-right: 75px;
-    padding-left: 0px;
-    position:fixed;
-    top: 0%;
-    bottom: 0%;
-    text-align: left;
+  width: 16%;
+  padding-top: 2%;
+  padding-right: 75px;
+  padding-left: 0px;
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  text-align: left;
 }
 
 #auth-nav-toggler {
-    position: fixed;
-    top: 50%;
-    left: 3%;
+  position: fixed;
+  top: 50%;
+  left: 3%;
 }
 
-@media screen and (max-width: 800px){
-    .auth-nav a {
-        font-size:medium;
-    }
+@media screen and (max-width: 800px) {
+  .auth-nav a {
+    font-size: medium;
+  }
 }
 
 /* Header */
 
 .main-header {
-    margin: 40px;
+  margin: 40px;
+  text-align: center;
 }
 
 /* Navbar */
 
 .navbar {
-    padding-right: 72.5px;
-    padding-left: 20px;
-    position:fixed;
-    top: 0%;
-    bottom: 0%;
-    left: 0%;
-    text-align: left;
+  padding-right: 72.5px;
+  padding-left: 20px;
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  text-align: left;
 }
-
 
 /* Navbar content */
 
 .nav {
-    position: fixed;
-    top: 0%;
-    bottom: 0%;
-    left: 90px;
-    right: 85%;
-    background-color: #285354;
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 90px;
+  right: 85%;
+  background-color: #285354;
 }
 
 .nav-item {
-    color: #ACBBBD;
-    font-size: 23px;
-    margin-left: 15px;
-    margin-top: 40px;
-    margin-bottom: 15px;
+  color: #acbbbd;
+  font-size: 23px;
+  margin-left: 15px;
+  margin-top: 40px;
+  margin-bottom: 15px;
 }
 
 .nav-item:hover {
-    color: #fff;
+  color: #fff;
 }
 
-
 .navbar-toggler {
-    position: fixed;
-    top: 50%;
-    left: 1%;
+  position: fixed;
+  top: 50%;
+  left: 1%;
 }
 
 #notes {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 #logout {
-    position: fixed;
-    bottom: 5%;
-    color: #AFDFE0;
+  position: fixed;
+  bottom: 5%;
+  color: #afdfe0;
 }
 
 .active {
-    color: #fff;
+  color: #fff;
 }
-
 
 /* Buttons */
 
 .submit:hover {
-    background-color: #6CDDE0;
+  background-color: #6cdde0;
 }
 
 /* Notes */
 
-    /* Body */
-    
-    .notes {
-        margin: 20px;
-        width: 1400px;
-    }
-    
-    /* Buttons */
- 
-    .btn-delete-notes {
-        position:absolute;
-        left: 100%;
-        top: 11%;
-        background-color: #5F797A;
-    }
+/* Body */
 
+.notes {
+  margin: 20px;
+  width: 1400px;
+}
+
+/* Buttons */
+
+.btn-delete-notes {
+  position: absolute;
+  left: 100%;
+  top: 11%;
+  background-color: #5f797a;
+}
 
 #note-date {
-    position:absolute;
-    right: 10%;
-    font-weight: bolder;
+  position: absolute;
+  right: 10%;
+  font-weight: bolder;
 }
 
 #date {
-    margin-top: 10px;
-    text-align: center;
-    font-weight: lighter;
-    height: 40px;
-    position: relative;
-    left: 90%;
-    bottom: 62px;
-    width: 250px;
-} 
-
-#note {
-    margin-left: 30px;
-    margin-top: 15px;
-    width: clamp(200px, 1100px, 1100px);   
+  margin-top: 0px;
+  text-align: center;
+  font-weight: lighter;
+  height: 60px;
 }
 
+#note {
+  margin-left: 30px;
+  margin-top: 15px;
+  width: clamp(200px, 1100px, 1100px);
+}
+
+#date {
+  position: relative;
+  left: 90%;
+  bottom: 62px;
+  width: 250px;
+}
 
 /* Flash */
 
 .flash {
-    padding-left: 10%;
-    font-weight: bolder;
+  padding-left: 10%;
+  font-weight: bolder;
 }
 
 .flash-close-btn {
-    position: absolute;
-    right: 10%;
-    top: 18%;
-    font-weight: bolder;
+  position: absolute;
+  right: 10%;
+  top: 18%;
+  font-weight: bolder;
 }

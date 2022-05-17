@@ -10,6 +10,7 @@ from flask_wtf import FlaskForm
 from wtforms.fields import DateField
 from wtforms.validators import DataRequired
 from wtforms import SubmitField
+import json
 
 views = Blueprint('views', __name__)
 
@@ -34,6 +35,7 @@ def notes():
     if request.method == 'POST':
         note = request.form.get('note')
         date = request.form.get('date')
+        to_notes = redirect(url_for('views.notes'))
 
         if len(note) < 1:
             flash('Note is too short!', category='error')
@@ -41,23 +43,19 @@ def notes():
             new_note = Note(data=note, user_id=current_user.id)
             db.session.add(new_note)
             db.session.commit()
-            return redirect(url_for('views.notes'))
         else:
             new_note = Note(data=note, date=datetime.strptime(date, "%Y-%m-%d"), user_id=current_user.id)
             db.session.add(new_note)
             db.session.commit()
-            return redirect(url_for('views.notes'))
-        
+        return to_notes
     return render_template("notes.html", form=form, user=current_user, current_page='notes')
 
 @views.route('/delete-note', methods=['POST'])
 def delete_note():
     note = json.loads(request.data)
-    noteId = note['noteId']
-    note = Note.query.get(noteId)
-    if note:
-        if note.user_id == current_user.id:
-            db.session.delete(note)
-            db.session.commit()
-            return redirect(url_for('views.notes'))
+    note_id = note['noteId']
+    note = Note.query.get(note_id)
+    if note and note.user_id == current_user.id:
+        db.session.delete(note)
+        db.session.commit()
     return jsonify({})
